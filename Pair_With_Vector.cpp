@@ -17,7 +17,10 @@ int main() {
     }
         vector<pair<string,int>>::iterator itr;
         sort(v1.begin(),v1.end(),anss);
-                // sort(v1.begin(),v1.end(),greater<int>());
+    //Ascending
+    // sort(v1.begin(),v1.end());
+    //Descending
+    // sort(v1.rbegin(),v1.rend());
     for(int i=0;i<v1.size();i++)
     {
         cout<<v1[i].first<<" "<<v1[i].second<<endl;
