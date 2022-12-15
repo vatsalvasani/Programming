@@ -1,38 +1,27 @@
-// C++ program for implementation
-// of Bubble sort
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-// A function to implement bubble sort
-void bubbleSort(int arr[], int n)
+void Bubble_Sort(vector<int> &v1)
 {
-	int i, j;
-	for (i = 0; i < n - 1; i++)
-
-		// Last i elements are already
-		// in place
-		for (j = 0; j < n - i - 1; j++)
-			if (arr[j] > arr[j + 1])
-				swap(arr[j], arr[j + 1]);
+	//simple idea is compare each element in every i loop but in ith loop last i elements are sorted so don't need to comare again
+	//time complexity o(n)(element are sorted),o(n^2),o(n^2)
+    for(int i=0;i<v1.size()-1;i++)
+    {
+	    //don't need to compare last i elements.
+        for(int j=0;j<v1.size()-i-1;j++)
+        {
+            if(v1[j]>v1[j+1])
+            {
+                swap(v1[j],v1[j+1]);
+            }
+        }
+    }
 }
 
-// Function to print an array
-void printArray(int arr[], int size)
-{
-	int i;
-	for (i = 0; i < size; i++)
-		cout << arr[i] << " ";
-	cout << endl;
+int main(){
+    vector<int> v1 = {1,2,6,8,4,5,76,9};
+    Bubble_Sort(v1);
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<" ";
+    }
 }
-
-// Driver code
-int main()
-{
-	int arr[] = { 5, 1, 4, 2, 8};
-	int N = sizeof(arr) / sizeof(arr[0]);
-	bubbleSort(arr, N);
-	cout << "Sorted array: \n";
-	printArray(arr, N);
-	return 0;
-}
-// This code is contributed by rathbhupendra
