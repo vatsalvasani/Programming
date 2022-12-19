@@ -46,7 +46,8 @@ vector<int> Solution::solve(vector<int> &A) {
    while(j<n){
        //i Hold The Position Of 0.
        if(A[j]!=0){
-           swap(A[i++],A[j]);
+           swap(A[i],A[j]);
+          i++;
         }
        j++;
    }
